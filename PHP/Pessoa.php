@@ -3,11 +3,11 @@
 
     require_once("Endereco.php");
 
-    abstract class Pessoa{
-        protected string $nome;
-        protected string $cpf;
-        protected string $telefone;
-        protected Endereco $endereco;
+    class Pessoa{
+        public string $nome;
+        public string $cpf;
+        public string $telefone;
+        public Endereco $endereco;
 
 
 
@@ -19,19 +19,20 @@
         }//Fim do construtor
 
         public function __get(string $nomeDaVariavel){
-            return $this->$nomeDaVariavel;
+            return $this->nomeDaVariavel;
         }
-
+    
         public function __set(string $nomeDaVariavel, string $valor):void 
         {
             $this->nomeDaVariavel = $valor;
         }
 
-        
-
-
-
-
+        public function __toString() : string{
+            return  "Nome: ".$this->nome.
+            ", CPF: ".$this->cpf.
+            ", telefone: ".$this->telefone.
+            ", Endereco: ".$this->endereco;
+        }
 
     }//Fim da classe
 

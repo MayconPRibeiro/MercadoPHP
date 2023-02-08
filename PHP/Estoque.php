@@ -2,12 +2,15 @@
 
 
     class Estoque{
+        protected int $codigo;
         protected string $produto;
         protected int $unidade;
         protected float $preco;
+        
     
 
-        public function __construct(string $produto, int $unidade, float $preco){
+        public function __construct(int $codigo, string $produto, int $unidade, float $preco){
+            $this->codigo = $codigo;
             $this->produto = $produto;
             $this->unidade = $unidade;
             $this->preco = $preco;
